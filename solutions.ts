@@ -19,3 +19,16 @@ const checkType = (input: StringOrNumber): string => {
 const getProperty = <T, K extends keyof T>(obj: T, key: K): T[K] => {
   return obj[key];
 };
+
+interface Book {
+  title: string;
+  author: string;
+  publishedYear: number;
+}
+
+const toggleReadStatus = (book: Book): Book & { isRead: boolean } => {
+  return {
+    ...book,
+    isRead: true,
+  };
+};
