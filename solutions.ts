@@ -15,3 +15,7 @@ const checkType = (input: StringOrNumber): string => {
     return "Number";
   }
 };
+
+const getProperty = <T, K extends keyof T>(obj: T, key: K): T[K] => {
+  return obj[key];
+};
